@@ -1,0 +1,27 @@
+# Python cache/artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE/editor
+.idea/
+.vscode/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Generated experiment outputs
+results_orlib_allmethods_20260429/
+results_orlib_batch_final/
+tmp_orlib_results/
+tmp_orlib_smoke/
+
+# Logs
+*.log

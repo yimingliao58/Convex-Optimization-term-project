@@ -1,0 +1,18 @@
+{
+  "dataset": "port5",
+  "port_file": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\data\\orlib\\port5.txt",
+  "n_assets": 225,
+  "k": 2,
+  "lower": 0.001,
+  "upper": 1.0,
+  "weighted_points": 21,
+  "epsilon_points": 21,
+  "run_nsga2": true,
+  "nsga2_generations": 60,
+  "nsga2_population": 80,
+  "seed": 42,
+  "elapsed_weighted_sec": 3.3332278728485107,
+  "elapsed_epsilon_sec": 4.165760040283203,
+  "elapsed_nsga2_sec": 1.144435167312622,
+  "elapsed_total_sec": 8.643423080444336
+}

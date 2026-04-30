@@ -1,0 +1,150 @@
+{
+  "elapsed_total_sec": 401.72167682647705,
+  "config": {
+    "orlib_dir": "data/orlib",
+    "datasets": "port1,port4",
+    "k": 8,
+    "lower": 0.001,
+    "upper": 1.0,
+    "weighted_points": 13,
+    "epsilon_points": 13,
+    "nsga2_generations": 40,
+    "nsga2_population": 60,
+    "seed": 42,
+    "output_dir": "results_orlib_batch_final/sensitivity_analysis"
+  },
+  "runs": [
+    {
+      "dataset": "port1",
+      "scenario": "base",
+      "scenario_desc": "No perturbation",
+      "k": 8,
+      "elapsed_weighted_sec": 2.7623379230499268,
+      "elapsed_epsilon_sec": 16.717339992523193,
+      "elapsed_nsga2_sec": 0.36489176750183105,
+      "elapsed_total_sec": 19.84456968307495,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port1_k8_base"
+    },
+    {
+      "dataset": "port1",
+      "scenario": "mu_noise_10",
+      "scenario_desc": "mu + 10% std noise",
+      "k": 8,
+      "elapsed_weighted_sec": 3.364100933074951,
+      "elapsed_epsilon_sec": 22.504807710647583,
+      "elapsed_nsga2_sec": 0.3720076084136963,
+      "elapsed_total_sec": 26.24091625213623,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port1_k8_mu_noise_10"
+    },
+    {
+      "dataset": "port1",
+      "scenario": "mu_noise_25",
+      "scenario_desc": "mu + 25% std noise",
+      "k": 8,
+      "elapsed_weighted_sec": 2.7910592555999756,
+      "elapsed_epsilon_sec": 16.099602460861206,
+      "elapsed_nsga2_sec": 0.3687455654144287,
+      "elapsed_total_sec": 19.25940728187561,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port1_k8_mu_noise_25"
+    },
+    {
+      "dataset": "port1",
+      "scenario": "sigma_scale_080",
+      "scenario_desc": "Sigma * 0.80",
+      "k": 8,
+      "elapsed_weighted_sec": 2.788357973098755,
+      "elapsed_epsilon_sec": 19.48598551750183,
+      "elapsed_nsga2_sec": 0.5831429958343506,
+      "elapsed_total_sec": 22.857486486434937,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port1_k8_sigma_scale_080"
+    },
+    {
+      "dataset": "port1",
+      "scenario": "sigma_scale_120",
+      "scenario_desc": "Sigma * 1.20",
+      "k": 8,
+      "elapsed_weighted_sec": 3.734869956970215,
+      "elapsed_epsilon_sec": 23.16604208946228,
+      "elapsed_nsga2_sec": 0.4776120185852051,
+      "elapsed_total_sec": 27.3785240650177,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port1_k8_sigma_scale_120"
+    },
+    {
+      "dataset": "port1",
+      "scenario": "sigma_shrink_30",
+      "scenario_desc": "Sigma shrink-corr 30%",
+      "k": 8,
+      "elapsed_weighted_sec": 2.71106219291687,
+      "elapsed_epsilon_sec": 23.42709732055664,
+      "elapsed_nsga2_sec": 0.506462574005127,
+      "elapsed_total_sec": 26.644622087478638,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port1_k8_sigma_shrink_30"
+    },
+    {
+      "dataset": "port4",
+      "scenario": "base",
+      "scenario_desc": "No perturbation",
+      "k": 8,
+      "elapsed_weighted_sec": 2.838470458984375,
+      "elapsed_epsilon_sec": 41.06087684631348,
+      "elapsed_nsga2_sec": 0.6588451862335205,
+      "elapsed_total_sec": 44.55819249153137,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port4_k8_base"
+    },
+    {
+      "dataset": "port4",
+      "scenario": "mu_noise_10",
+      "scenario_desc": "mu + 10% std noise",
+      "k": 8,
+      "elapsed_weighted_sec": 2.417139768600464,
+      "elapsed_epsilon_sec": 41.446720600128174,
+      "elapsed_nsga2_sec": 0.6138262748718262,
+      "elapsed_total_sec": 44.477686643600464,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port4_k8_mu_noise_10"
+    },
+    {
+      "dataset": "port4",
+      "scenario": "mu_noise_25",
+      "scenario_desc": "mu + 25% std noise",
+      "k": 8,
+      "elapsed_weighted_sec": 2.764706611633301,
+      "elapsed_epsilon_sec": 39.542020082473755,
+      "elapsed_nsga2_sec": 0.6228451728820801,
+      "elapsed_total_sec": 42.929571866989136,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port4_k8_mu_noise_25"
+    },
+    {
+      "dataset": "port4",
+      "scenario": "sigma_scale_080",
+      "scenario_desc": "Sigma * 0.80",
+      "k": 8,
+      "elapsed_weighted_sec": 2.8297252655029297,
+      "elapsed_epsilon_sec": 41.003321409225464,
+      "elapsed_nsga2_sec": 0.6870982646942139,
+      "elapsed_total_sec": 44.52014493942261,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port4_k8_sigma_scale_080"
+    },
+    {
+      "dataset": "port4",
+      "scenario": "sigma_scale_120",
+      "scenario_desc": "Sigma * 1.20",
+      "k": 8,
+      "elapsed_weighted_sec": 2.542039394378662,
+      "elapsed_epsilon_sec": 40.48698091506958,
+      "elapsed_nsga2_sec": 0.5343701839447021,
+      "elapsed_total_sec": 43.563390493392944,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port4_k8_sigma_scale_120"
+    },
+    {
+      "dataset": "port4",
+      "scenario": "sigma_shrink_30",
+      "scenario_desc": "Sigma shrink-corr 30%",
+      "k": 8,
+      "elapsed_weighted_sec": 2.1951675415039062,
+      "elapsed_epsilon_sec": 36.42831635475159,
+      "elapsed_nsga2_sec": 0.6537775993347168,
+      "elapsed_total_sec": 39.27726149559021,
+      "run_dir": "E:\\2026_Graduate_1\\convex optimization\\Project_upload\\results_orlib_batch_final\\sensitivity_analysis\\port4_k8_sigma_shrink_30"
+    }
+  ]
+}
