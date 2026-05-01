@@ -160,8 +160,8 @@ def plot_pareto_grid(batch_dir, datasets, k, out_dir, stem):
                 transform=ax.transAxes,
                 fontsize=9,
             )
-            ax.set_xlabel("Risk")
-            ax.set_ylabel("Return")
+            ax.set_xlabel("Profit (Return)")
+            ax.set_ylabel("Risk")
             ax.grid(alpha=0.25)
             continue
         pts = read_pareto_csv(csv_path)
@@ -169,16 +169,16 @@ def plot_pareto_grid(batch_dir, datasets, k, out_dir, stem):
         for m in methods:
             sub = [p for p in pts if p["method"] == m]
             ax.scatter(
-                [p["risk"] for p in sub],
                 [p["return"] for p in sub],
+                [p["risk"] for p in sub],
                 s=16,
                 alpha=0.78,
                 color=COLORS.get(m, None),
                 label=m,
             )
         ax.set_title("{}  (K={})".format(ds, k), fontsize=10)
-        ax.set_xlabel("Risk")
-        ax.set_ylabel("Return")
+        ax.set_xlabel("Profit (Return)")
+        ax.set_ylabel("Risk")
         ax.grid(alpha=0.25)
         ax.legend(fontsize=7)
 
