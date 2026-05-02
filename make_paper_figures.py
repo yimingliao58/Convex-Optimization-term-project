@@ -143,49 +143,40 @@ def read_pareto_csv(path):
     return rows
 
 
-def plot_pareto_grid(batch_dir, datasets, k, out_dir, stem):
-    fig, axes, n_rows, n_cols = build_grid(len(datasets), max_cols=3, base_w=13.8, base_h=7.6)
-    for idx, ds in enumerate(datasets):
-        ax = axes[idx // n_cols][idx % n_cols]
-        run_dir = os.path.join(batch_dir, "{}_k{}".format(ds, k))
-        csv_path = os.path.join(run_dir, "all_pareto.csv")
-        if not os.path.exists(csv_path):
-            ax.set_title("{}  (K={})".format(ds, k), fontsize=10)
-            ax.text(
-                0.5,
-                0.5,
-                "Missing all_pareto.csv",
-                ha="center",
-                va="center",
-                transform=ax.transAxes,
-                fontsize=9,
-            )
-            ax.set_xlabel("Profit (Return)")
-            ax.set_ylabel("Risk")
-            ax.grid(alpha=0.25)
-            continue
-        pts = read_pareto_csv(csv_path)
-        methods = sorted(set(p["method"] for p in pts))
-        for m in methods:
-            sub = [p for p in pts if p["method"] == m]
-            ax.scatter(
-                [p["return"] for p in sub],
-                [p["risk"] for p in sub],
-                s=16,
-                alpha=0.78,
-                color=COLORS.get(m, None),
-                label=m,
-            )
-        ax.set_title("{}  (K={})".format(ds, k), fontsize=10)
-        ax.set_xlabel("Profit (Return)")
-        ax.set_ylabel("Risk")
-        ax.grid(alpha=0.25)
-        ax.legend(fontsize=7)
+def unique_dataset_k_pairs(rows):
+    return sorted(set((r["dataset"], r["k"]) for r in rows), key=lambda x: (x[0], x[1]))
 
-    for idx in range(len(datasets), n_rows * n_cols):
-        axes[idx // n_cols][idx % n_cols].axis("off")
+
+def plot_pareto_single(batch_dir, dataset, k, out_dir, stem):
+    run_dir = os.path.join(batch_dir, "{}_k{}".format(dataset, k))
+    csv_path = os.path.join(run_dir, "all_pareto.csv")
+    if not os.path.exists(csv_path):
+        return False
+
+    pts = read_pareto_csv(csv_path)
+    if not pts:
+        return False
+
+    methods = sorted(set(p["method"] for p in pts))
+    fig, ax = plt.subplots(figsize=(6.6, 4.9))
+    for m in methods:
+        sub = [p for p in pts if p["method"] == m]
+        ax.scatter(
+            [p["return"] for p in sub],
+            [p["risk"] for p in sub],
+            s=18,
+            alpha=0.80,
+            color=COLORS.get(m, None),
+            label=m,
+        )
+    ax.set_title("{}  (K={})".format(dataset, k), fontsize=11)
+    ax.set_xlabel("Profit (Return)")
+    ax.set_ylabel("Risk")
+    ax.grid(alpha=0.25)
+    ax.legend(fontsize=8)
     fig.tight_layout()
     save_png_pdf(fig, out_dir, stem)
+    return True
 
 
 
@@ -227,21 +218,18 @@ def main():
     )
     plot_runtime(rows=rows, out_dir=args.output_dir, stem="fig03_runtime_by_method")
 
-    datasets = sorted(set(r["dataset"] for r in rows))
-    plot_pareto_grid(
-        batch_dir=args.batch_dir,
-        datasets=datasets,
-        k=8,
-        out_dir=args.output_dir,
-        stem="fig04_pareto_grid_k8",
-    )
-    plot_pareto_grid(
-        batch_dir=args.batch_dir,
-        datasets=datasets,
-        k=16,
-        out_dir=args.output_dir,
-        stem="fig05_pareto_grid_k16",
-    )
+    saved = 0
+    for dataset, k in unique_dataset_k_pairs(rows):
+        stem = "pareto_{}_k{}".format(dataset, k)
+        if plot_pareto_single(
+            batch_dir=args.batch_dir,
+            dataset=dataset,
+            k=k,
+            out_dir=args.output_dir,
+            stem=stem,
+        ):
+            saved += 1
+    print("Saved single Pareto figures: {}".format(saved))
     print("Paper figures saved to: {}".format(os.path.abspath(args.output_dir)))
 
 
