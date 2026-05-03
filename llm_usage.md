@@ -5,13 +5,20 @@
 - Provider: OpenAI/Google
 - Model: GPT-5.3-Codex/Gemini 3.1pro
 
+- Tool/Platform: Claude
+- Provider: Anthropic
+- Model: Claude Sonnet 4.6
+
 ## 2. Dates of Use
-- 2026-04-25 to 2026-04-29
+- 2026-04-19 to 2026-05-03
 
 ## 3. What It Was Used For
 - Brain Storm
   - Confirm whether the project chosen by our group meets the requirements of the course project 
   - Identify any areas that can be improved.
+- Conceptual Understanding:
+  - Helping to understand and visualize algorithms, particularly NGSA-II
+  - Analyze behaviors of algorithms and observe potential strengths and weaknesses
 - Code implementation support for:
   - Building and refining experiment scripts:
     - `portfolio_methods.py`
@@ -34,6 +41,9 @@
     - command examples
     - input/output description
     - file/folder structure explanations
+  - Report Information
+    - Formating equations and figures in overleaf
+    - Helping to reword original thoughts.
 
 ## 4. Prompt / Transcript Log
 - Full logs are provided as:
@@ -73,6 +83,7 @@
 
 ## 6. Verification / Editing Performed by Students
 - Students manually reviewed and edited all LLM-generated code and text before final use.
+  - All text used in report was written by students.
 - Verification actions performed by students:
   - Syntax validation (`py_compile`) for modified scripts
   - CLI sanity checks (`--help`) before long runs
