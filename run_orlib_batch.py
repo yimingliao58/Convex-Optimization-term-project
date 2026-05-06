@@ -1,4 +1,4 @@
-"""Batch experiments on OR-Library portfolio datasets."""
+﻿"""Batch experiments on OR-Library portfolio datasets."""
 
 import argparse
 import csv
@@ -225,8 +225,8 @@ def main() -> None:
     )
     parser.add_argument("--lower", type=float, default=0.001)
     parser.add_argument("--upper", type=float, default=1.0)
-    parser.add_argument("--weighted-points", type=int, default=21)
-    parser.add_argument("--epsilon-points", type=int, default=21)
+    parser.add_argument("--weighted-points", type=int, default=15)
+    parser.add_argument("--epsilon-points", type=int, default=15)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
         "--run-nsga2",
@@ -236,12 +236,12 @@ def main() -> None:
     parser.add_argument(
         "--nsga2-k-values",
         type=str,
-        default="8",
+        default="2,4,8,16",
         help="Comma-separated K values where NSGA-II should run",
     )
-    parser.add_argument("--nsga2-generations", type=int, default=60)
-    parser.add_argument("--nsga2-population", type=int, default=80)
-    parser.add_argument("--output-dir", type=str, default="results_orlib_batch")
+    parser.add_argument("--nsga2-generations", type=int, default=50)
+    parser.add_argument("--nsga2-population", type=int, default=70)
+    parser.add_argument("--output-dir", type=str, default="results_orlib_batch_final")
     args = parser.parse_args()
 
     datasets = [x.strip() for x in args.datasets.split(",") if x.strip()]
@@ -313,3 +313,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
